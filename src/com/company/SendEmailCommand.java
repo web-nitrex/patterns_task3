@@ -1,0 +1,16 @@
+package com.company;
+
+public class SendEmailCommand implements Command{
+    private Client client;
+
+    public SendEmailCommand(Client client) {
+        this.client = client;
+    }
+
+    @Override
+    public void execute()
+    {
+        client.acceptSMS("Вам пришел e-mail!");
+        client.acceptEmail("Вам поступила ссылка на скачивание анкеты: sber.com/anketa");
+    }
+}
